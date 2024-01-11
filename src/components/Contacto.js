@@ -6,10 +6,10 @@ export const Contacto = () => {
       <h1 className='heading'>Contact</h1>
 
       <form className='contact' action='mailto:quintanamiguel0902@gmail.com'>
-          <input type='text' placeholder='Nombre'></input>
+          <input type='text' placeholder='Name'></input>
           <input type='text' placeholder='E-mail'></input>
-          <textarea placeholder='Motivo de contacto'/>
-          <input type='submit' value='Enviar'></input>      
+          <textarea placeholder='Contact reason'/>
+          <input type='submit' value='Send'></input>      
       </form>
     </div>
   )

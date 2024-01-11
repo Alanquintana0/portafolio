@@ -7,6 +7,7 @@ import { Portafolio } from '../components/Portafolio';
 import { Servicios } from '../components/Servicios';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer'
+import { Project } from '../components/Project';
 
 export const MyRoutes = () => {
   return (
@@ -22,6 +23,12 @@ export const MyRoutes = () => {
           <Route path="/curriculum" element={<Curriculum />}></Route>
           <Route path="/portafolio" element={<Portafolio />}></Route>
           <Route path="/services" element={<Servicios />}></Route>
+          <Route path='/project/:id' element={<Project/>}></Route>
+          <Route path='*' element={
+            <div className='page'>
+              <h1 className='heading'>Error 404</h1>
+            </div>
+          }></Route>
         </Routes>
       </section>
 

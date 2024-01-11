@@ -73,7 +73,7 @@ code {
 }
 
 .header .active,
-.header a:hover{
+.header .a:hover{
   color: crimson;
 }
 
@@ -82,8 +82,8 @@ code {
 }
 
 .footer{
-  min-height: 80px;
-  line-height: 40px;
+  min-height: 40px;
+  line-height: 7px;
   text-align: center;
   font-size: 14px;
   margin-top: 80px;
@@ -93,33 +93,29 @@ code {
   color: #444;
 }
 
-.home h1{
+.home .home-text h1{
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 400;
   font-size: 40px;
   margin-bottom: 0px;
 }
 
-.home strong{
+.home .home-text strong{
   color: crimson;
 }
 
-.home h2{
+.home .home-text h2{
   color: rgb(75, 74, 74);
   font-weight: lighter;
 }
 
-.home a{
+.home .home-text a{
   padding: 3px;
   border-radius: 3px;
   color: white;
   background-color: orangered;
   text-decoration: none;
   transition: 300ms;
-}
-
-.home a:hover{
-  background-color: black;
 }
 
 .page .heading,
@@ -147,6 +143,8 @@ code {
 .page .section-1 .heading{
   text-align: center;
   font-family: monospace;
+  margin-top: -20px;
+  margin-bottom: -10px;
 }
 
 
@@ -154,13 +152,15 @@ code {
   font-family: Arial, Helvetica, sans-serif;
   color: crimson;
   text-align: center;
+  margin-bottom: -10px;
 }
 
 .page .section-1 .profile,
-.page .section-2 strong{
+.page .section-2 strong,
+.page .section-3 strong{
   color: crimson;
   font-family:monospace;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .page .section-2 .skills .skills-list{
@@ -180,16 +180,141 @@ code {
   margin-left: 30px;
 }
 
-.section-2 .experience .job-title{
+.section-2 .experience .job-title,
+.section-3 .academic .job-title{
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin-top: -15px;
   font-weight: bold;
+
 }
 
-.section-2 .experience .experiences{
+.section-2 .experience .experiences,
+.section-3 .academic .experiences{
   margin-bottom: 40px;
 }
 
-.section-2 .experience .experiences .responsabilities{
+.section-2 .experience .experiences .responsabilities,
+.section-3 .academic .experiences .responsabilities,
+.section-3 .other-skills .ul{
   color: rgb(75, 74, 74);
+}
+
+.section-3{
+  display: flex;
+}
+
+.section-3 .academic{
+  width: 70%;
+}
+
+input[type='text'],
+textarea{
+  padding: 15px;
+  display: block;
+  margin-top: 25px;
+  width: 250px;
+}
+
+input[type='submit'],
+button{
+  font-size: 15px;
+  padding: 15px;
+  border: 0px;
+  border-radius: 5px;
+  margin-top: 15px;
+  color: white;
+  background-color: orangered;
+  text-decoration: none;
+  transition: 300ms;
+}
+
+.home .home-text a:hover,
+input[type='submit']:hover,
+button:hover{
+  background-color: black;
+}
+
+.works{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.work-item{
+  flex-basis: 30%;
+  flex-grow: 1;
+
+  margin: 30px;
+}
+
+.work-item .mask{
+  width: 100%;
+  height: 290px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  box-shadow: 0px 5px 14px #ddd;
+}
+
+.work-item img{
+  width: 100%;
+  transition: all 500ms;
+}
+
+.work-item .mask:hover img{
+  width: 120%;
+}
+
+.work-item span{
+  color: gray;
+  margin-top: 25px;
+  display: block;
+}
+
+.work-item h2{
+  display: block;
+  color: black;
+  margin-top: 5px;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.work-item a{
+  color: black;
+  text-decoration: none;
+  transition: all 300ms;
+}
+
+.work-item a:hover{
+  color: crimson;
+}
+
+.work-item h3{
+  display: block;
+  margin-top: 5px;
+  color: gray;
+  margin-top: 0px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+}
+
+.page-work .mask img{
+  width: 100%;
+}
+
+.page-work .mask{
+  height: 400px;
+  overflow: hidden;
+  box-shadow: 0px 5px 14px #ddd;
+}
+
+.page-work a{
+  padding: 3px;
+  border-radius: 3px;
+  color: white;
+  background-color: orangered;
+  text-decoration: none;
+  transition: 300ms;
+}
+
+.page-work a:hover{
+  background-color: black;
 }
