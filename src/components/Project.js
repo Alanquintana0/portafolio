@@ -14,7 +14,7 @@ export const Project = () => {
   return (
     <div className='page page-work'>
         <div className='mask'>
-                <img src={'/images/'+project.id+".png"}/>
+                <img src={'/portafolio/images/'+project.id+".png"}/>
         </div>
         <h1 className='heading'>{project.nombre}</h1>
         <p>{project.tecnologias}</p>
