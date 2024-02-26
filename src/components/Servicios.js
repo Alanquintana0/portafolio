@@ -1,5 +1,6 @@
 import React from 'react'
 
+//Se exporta este modulo que contiene un resumen de los servicios ofrecidos.
 export const Servicios = () => {
   return (
     <div className='page'>

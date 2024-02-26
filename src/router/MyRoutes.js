@@ -1,4 +1,5 @@
 import React from 'react'
+//Importamos todos nuestros componentes.
 import { Routes, Route, BrowserRouter, NavLink, Navigate } from "react-router-dom"
 import {Inicio} from "../components/Inicio";
 import { Contacto } from '../components/Contacto';
@@ -14,7 +15,7 @@ export const MyRoutes = () => {
     <BrowserRouter>
       {/*Header y navegacion*/}
       <Header />
-      {/*Contenido central*/}
+      {/*Contenido central, usamos nuestras rutas importadas para crear enlaces hacia los componentes de nuestra pagina sin tener que recargarla.*/}
       <section className="content">
         <Routes>
           <Route path="/" element={<Navigate to='/inicio'/>}></Route>
@@ -24,6 +25,7 @@ export const MyRoutes = () => {
           <Route path="/portafolio" element={<Portafolio />}></Route>
           <Route path="/services" element={<Servicios />}></Route>
           <Route path='/project/:id' element={<Project/>}></Route>
+          {/*En caso de que la ruta contenga un parametro desconocido, se recibe un error 404.*/}
           <Route path='*' element={
             <div className='page'>
               <h1 className='heading'>Error 404</h1>

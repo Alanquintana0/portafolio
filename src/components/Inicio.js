@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ProjectList } from './ProjectList'
 
 export const Inicio = () => {
+  /*Pagina de inicio, pagina en la cual presento mi perfil*/
   return (
     <div className='home'>
       <h1 className='home-text'>
@@ -20,6 +21,7 @@ export const Inicio = () => {
         different fields I learned in my career and fuse them together.
         For more information about me, my profile and skills: <Link to='/contact'>Contact me</Link>.
       </h2>
+      {/*En esta seccion llamo al modulo ProjectList con un limite para que solo me muestre 2 proyectos y sus accesos.*/}
       <section className='latest-works'>
         <h2 className='heading'>Some of my latest projects</h2>
         <ProjectList limite="2"/>

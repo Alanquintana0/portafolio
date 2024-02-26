@@ -1,6 +1,7 @@
 import React from "react";
 
 export const Curriculum = () => {
+  /*Curriculum creado en HTML */
   return (
     <div className="page">
       <section className="section-1">
