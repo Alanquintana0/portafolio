@@ -11,7 +11,9 @@ export const Project = () => {
     //Usamos el hook useEffect para recibir filtrar nuestro proyecto y desplegarlo, este hook se ejecutara una vez despues del primer renderizado
     useEffect(()=>{
       //Filtramos el proyecto por id dentro de nuestros proyectos.
+        console.log(projects)
         let project = projects.filter(project => project.id===params.id);
+        console.log(project);
         setProject(project[0])
     },[]);
 
@@ -19,12 +21,12 @@ export const Project = () => {
   return (
     <div className='page page-work'>
         <div className='mask'>
-                <img src={'/portafolio/images/'+project.id+".png"}/>
+        <img src={`/images/${project.id}.png`} alt='Imagen de proyecto'/>
         </div>
-        <h1 className='heading'>{project.nombre}</h1>
-        <p>{project.tecnologias}</p>
-        <p>{project.descripcion}</p>
-        <a href={project.url} target='_blank'>Go to project</a>
+        <h1 className='heading'>{project ? project.nombre : 'Cargando...'}</h1> 
+        <p>{project ? project.tecnologias : 'Cargando...'}</p> 
+        <p>{project ? project.descripcion : 'Cargando...'}</p> 
+        <a href={project ? project.url : '#'} target='_blank' rel='noreferrer'>Go to project</a> 
     </div>
   )
 }

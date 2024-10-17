@@ -18,12 +18,17 @@ code {
 }
 
 .header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
   display: flex;
   height: 132px;
   justify-content: center;
   align-items: center;
-  border-bottom: 2px solid black;
-  margin-bottom: 35px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.082);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 
 .header .logo{
@@ -70,27 +75,40 @@ code {
   color: black;
   text-decoration: none;
   transition: all 300ms;
+  padding: 15px;
+  border-radius: 5px;
 }
 
-.header .active,
+
 .header .a:hover{
   color: crimson;
 }
 
+.header .active{
+  color: crimson;
+  box-shadow: 0px 4px 15px #ddd;
+}
+
 .content{
   min-height: 400px;
+  margin-top: 180px;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .footer{
   min-height: 40px;
+  position: relative;
   line-height: 7px;
   text-align: center;
   font-size: 14px;
   margin-top: 80px;
   padding-top: 45px;
   border-top: 3px solid black;
-  background: #f5f5f5;
+  background: white;
   color: #444;
+  width: 100%;
+  left: 0;
+  box-sizing: border-box;
 }
 
 .home .home-text h1{
@@ -242,8 +260,15 @@ button:hover{
 .work-item{
   flex-basis: 30%;
   flex-grow: 1;
-
+  padding: 10px;
   margin: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 300ms all;
+}
+
+.work-item:hover{
+  box-shadow: 0px 5px 14px lightgray;
 }
 
 .work-item .mask{
@@ -260,7 +285,8 @@ button:hover{
 }
 
 .work-item .mask:hover img{
-  width: 120%;
+  transform: scale(1.2); /* Cambiado para escalar desde el centro */
+  transition: transform 500ms; /* Asegúrate de que la transición se aplique */
 }
 
 .work-item span{
@@ -296,8 +322,105 @@ button:hover{
   border-top: 1px solid #ddd;
 }
 
-.page-work .mask img{
+.works-slide{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.work-item-slide{
+  flex-basis: 30%;
+  flex-grow: 1;
+  padding: 10px;
+  margin: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 300ms all;
+}
+
+.work-item-slide:hover{
+  box-shadow: 0px 5px 14px lightgray;
+}
+
+.work-item-slide .mask{
   width: 100%;
+  height: 290px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  box-shadow: 0px 5px 14px #ddd;
+}
+
+.work-item-slide img{
+  width: 100%;
+  transition: all 500ms;
+}
+
+.work-item-slide .mask:hover img{
+  transform: scale(1.2); /* Cambiado para escalar desde el centro */
+  transition: transform 500ms; /* Asegúrate de que la transición se aplique */
+}
+
+.work-item-slide span{
+  color: gray;
+  margin-top: 25px;
+  display: block;
+}
+
+.work-item-slide h2{
+  display: block;
+  color: black;
+  margin-top: 5px;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.work-item-slide a{
+  color: black;
+  text-decoration: none;
+  transition: all 300ms;
+}
+
+.work-item-slide a:hover{
+  color: crimson;
+}
+
+.work-item-slide h3{
+  display: block;
+  margin-top: 5px;
+  color: gray;
+  margin-top: 0px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+}
+
+.page-work-slide .mask img{
+  width: 100%;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%); /* Comienza fuera de la pantalla a la derecha */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%); /* Sale hacia la izquierda */
+    opacity: 0;
+  }
+}
+
+.work-item {
+  animation-duration: 1s; /* Duración de la animación */
+  animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
 }
 
 .page-work .mask{
