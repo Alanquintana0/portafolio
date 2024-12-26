@@ -5,7 +5,7 @@ export const Curriculum = () => {
   return (
     <div className="page">
       <section className="section-1">
-        <h1 className="heading">MIGUEL ALAN QUINTANA</h1>
+        <h1 className="heading">MIGUEL ALAN QUINTANA M.</h1>
         <h2 className="employ">
           <strong>Frontend developer</strong>
         </h2>

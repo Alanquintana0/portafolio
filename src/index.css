@@ -80,8 +80,10 @@ code {
 }
 
 
-.header .a:hover{
-  color: crimson;
+.header a:hover{
+  background-color: rgba(220, 20, 60, 0.096);
+  color: black;
+  box-shadow: 0px 4px 15px #dddddd31;
 }
 
 .header .active{
@@ -112,7 +114,7 @@ code {
 }
 
 .home .home-text h1{
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Raleway', monospace;
   font-weight: 400;
   font-size: 40px;
   margin-bottom: 0px;
@@ -153,6 +155,12 @@ code {
   color: rgb(75, 74, 74);
 }
 
+.section-1,
+.section-2,
+.section-3 {
+  font-family: 'Raleway', sans-serif;
+}
+
 .page .section-1,
 .page .section-2{
   border-bottom: 2px solid gray;
@@ -160,14 +168,14 @@ code {
 
 .page .section-1 .heading{
   text-align: center;
-  font-family: monospace;
+  font-family: 'Raleway', monospace;
   margin-top: -20px;
   margin-bottom: -10px;
 }
 
 
 .page .section-1 .employ{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Raleway', monospace;
   color: crimson;
   text-align: center;
   margin-bottom: -10px;
@@ -177,7 +185,7 @@ code {
 .page .section-2 strong,
 .page .section-3 strong{
   color: crimson;
-  font-family:monospace;
+  font-family:'Raleway', monospace;
   font-size: 20px;
 }
 
@@ -186,7 +194,7 @@ code {
 }
 
 .page .section-1 p{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Raleway', monospace;
   color: rgb(75, 74, 74);
 }
 
@@ -200,7 +208,7 @@ code {
 
 .section-2 .experience .job-title,
 .section-3 .academic .job-title{
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family:'Raleway', monospace;
   margin-top: -15px;
   font-weight: bold;
 
@@ -264,10 +272,11 @@ button:hover{
   margin: 30px;
   border-radius: 5px;
   cursor: pointer;
-  transition: 300ms all;
+  transition: transform 100ms, box-shadow 100ms;;
 }
 
 .work-item:hover{
+  transform: translateY(-5px);
   box-shadow: 0px 5px 14px lightgray;
 }
 
@@ -281,12 +290,11 @@ button:hover{
 
 .work-item img{
   width: 100%;
-  transition: all 500ms;
+  transition: transform 100ms;
 }
 
-.work-item .mask:hover img{
-  transform: scale(1.2); /* Cambiado para escalar desde el centro */
-  transition: transform 500ms; /* Asegúrate de que la transición se aplique */
+.work-item:hover .mask img{
+  transform: scale(1.05);
 }
 
 .work-item span{
@@ -440,4 +448,36 @@ button:hover{
 
 .page-work a:hover{
   background-color: black;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.service {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service h2 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.service p {
+  color: #666;
+  line-height: 1.6;
 }

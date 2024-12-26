@@ -7,8 +7,8 @@ export const Inicio = () => {
   return (
     <div className='home'>
       <h1 className='home-text'>
-        Hi! i'm Miguel Alan Quintana, a <strong>Computer Science Engineering </strong>
-        student at the UACH, located in Chihuahua, Chihuahua.
+        Hi! i'm Miguel Alan Quintana, a <strong>Computer Science Engineer </strong>
+        graduated from the UACH, located in Chihuahua, Chihuahua.
       </h1>
       <h2 className='home-text'>
         I have knowledge in both <strong>Frontend</strong> and <strong>Backend</strong>, 
