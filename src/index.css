@@ -31,6 +31,66 @@ code {
   z-index: 1000;
 }
 
+.svg-curves {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.svg-curves svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 92px;
+}
+
+.svg-curves .shape-fill {
+  fill: gray;
+}
+
+/* Agregamos las nuevas animaciones */
+.svg-curves path:nth-child(1) {
+  animation: wave1 4s ease-in-out infinite alternate;
+}
+
+.svg-curves path:nth-child(2) {
+  animation: wave2 5s ease-in-out infinite alternate;
+}
+
+.svg-curves path:nth-child(3) {
+  animation: wave3 2s ease-in-out infinite alternate;
+}
+
+@keyframes wave1 {
+  from {
+    transform: translateX(-5%);
+  }
+  to {
+    transform: translateX(5%);
+  }
+}
+
+@keyframes wave2 {
+  from {
+    transform: translateX(5%);
+  }
+  to {
+    transform: translateX(-5%);
+  }
+}
+
+@keyframes wave3 {
+  from {
+    transform: translateX(-3%);
+  }
+  to {
+    transform: translateX(3%);
+  }
+}
+
 .header .logo{
   flex-grow: 2;
   display: flex;
@@ -113,11 +173,58 @@ code {
   box-sizing: border-box;
 }
 
+.homepage-curves{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 400px;
+  padding: 100px 20vw;
+}
+
+.curve{
+  position: absolute;
+  height: 225px;
+  width: 100%;
+  bottom: 0;
+}
+
+.curve::before{
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 55%;
+  height: 100%;
+  background-color: #202731;
+  transform: translate(85%, 60%);
+}
+
+.curve::after{
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 55%;
+  height: 100%;
+  background-color: crimson;
+  transform: translate(-4%, 40%);
+  z-index: -1;
+}
+
+.lightgray{
+  background-color: lightgray;
+}
+
 .home .home-text h1{
   font-family: 'Raleway', monospace;
   font-weight: 400;
   font-size: 40px;
   margin-bottom: 0px;
+}
+
+.home .home-text{
+  text-align: justify;
 }
 
 .home .home-text strong{
@@ -133,7 +240,7 @@ code {
   padding: 3px;
   border-radius: 3px;
   color: white;
-  background-color: orangered;
+  background-color: crimson;
   text-decoration: none;
   transition: 300ms;
 }
@@ -441,7 +548,7 @@ button:hover{
   padding: 3px;
   border-radius: 3px;
   color: white;
-  background-color: orangered;
+  background-color: crimson;
   text-decoration: none;
   transition: 300ms;
 }
@@ -481,3 +588,36 @@ button:hover{
   color: #666;
   line-height: 1.6;
 }
+
+.contact-component{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-button{
+  display: flex;
+  background-color: crimson;
+  color: white;
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  transition: 300ms all;
+  cursor: pointer;
+}
+
+.contact-button h1{
+  width: 106px;
+  height: 25px;
+  margin: 0;
+  text-align: center;
+}
+
+.contact-button:hover{
+  background-color:  black;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
