@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { ProjectList } from './ProjectList'
 import { Contacto } from './Contacto'
+import { Presentacion } from './Presentacion'
+import { Servicios } from './Servicios'
 
 export const Inicio = () => {
   /*Pagina de inicio, pagina en la cual presento mi perfil*/
@@ -14,25 +15,14 @@ export const Inicio = () => {
           <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
         </svg>
       </div>
-      <h1 className='home-text'>
-        Hi! i'm Miguel Alan Quintana, a <strong>Computer Science Engineer </strong>
-        graduated from the UACH, located in Chihuahua, Chihuahua.
-      </h1>
-      <h2 className='home-text'>
-        I have knowledge in both <strong>Frontend</strong> and <strong>Backend</strong>, 
-        as well as knowledge in data science and different approaches to the broad field of computer 
-        science.
-      </h2>
-      <h2 className='home-text'>
-        I'm a person who enjoys creating web pages and is looking forward to
-        take my professional journey in this topic, and in the future, incorporate all of the 
-        different fields I learned in my career and fuse them together.
-        For more information about me, my profile and skills: <Link to='/contact'>Contact me</Link>.
-      </h2>
+      <Presentacion/>
       {/*En esta seccion llamo al modulo ProjectList con un limite para que solo me muestre 2 proyectos y sus accesos.*/}
       <section className='latest-works'>
         <h2 className='heading'>Some of my latest projects</h2>
-        <ProjectList limite="2"/>
+        <ProjectList />
+      </section>
+      <section className="services">
+        <Servicios></Servicios>
       </section>
       <section className='contact'>
         <Contacto></Contacto>

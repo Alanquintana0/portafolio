@@ -107,6 +107,7 @@ code {
   display: block;
   flex-basis: 40px;
   margin-left: 10px;
+  padding-left: 40px;
   font-weight: 300;
   text-transform: uppercase;
 }
@@ -129,6 +130,10 @@ code {
   font-size: 17px;
   margin-left: 15px;
   margin-right: 15px;
+}
+
+.contact{
+  margin-right: 100px;
 }
 
 .header li a{
@@ -154,7 +159,7 @@ code {
 .content{
   min-height: 400px;
   margin-top: 180px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.178);
 }
 
 .footer{
@@ -257,6 +262,8 @@ code {
   font-size: 50px;
   font-weight: bold;
 }
+
+
 
 .home p{
   color: rgb(75, 74, 74);

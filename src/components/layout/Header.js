@@ -8,14 +8,13 @@ export const Header = () => {
     <header className='header'>
         {/*Span del logo de header*/}
         <div className='logo'>
-            <span>M</span>
             <h3>Miguel Alan Quintana</h3>
         </div>
         
         {/*Usamos nav y una lista no ordenada para listar los sitios de nuestro header y creando el acceso directo usando navLink.*/}
         <nav>
             <ul>
-                <li>
+                {/* <li>
                     <NavLink to='/inicio' className={({isActive}) => isActive ? "active" : ""}>Home</NavLink>
                 </li>
                 <li>
@@ -23,9 +22,12 @@ export const Header = () => {
                 </li>
                 <li>
                     <NavLink to='/services' className={({isActive}) => isActive ? "active" : ""}>Services</NavLink>
-                </li>
+                </li> */}
                 <li>
                     <NavLink to='/curriculum' className={({isActive}) => isActive ? "active" : ""}>Resume</NavLink>
+                </li>
+                <li>
+                    <NavLink to='/curriculum' className="active contact">Contact me!</NavLink>
                 </li>
                 {/*Link to 
                 <li>
