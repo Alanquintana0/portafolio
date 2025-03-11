@@ -24,10 +24,10 @@ export const Header = () => {
                     <NavLink to='/services' className={({isActive}) => isActive ? "active" : ""}>Services</NavLink>
                 </li> */}
                 <li>
-                    <NavLink to='/curriculum' className={({isActive}) => isActive ? "active" : ""}>Resume</NavLink>
+                    <NavLink to='/curriculum' >Resume</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/curriculum' className="active contact">Contact me!</NavLink>
+                    <NavLink to='/' className="active contact">Contact me!</NavLink>
                 </li>
                 {/*Link to 
                 <li>

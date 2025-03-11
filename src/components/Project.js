@@ -21,12 +21,16 @@ export const Project = () => {
   return (
     <div className='page page-work'>
         <div className='mask'>
-        <img src={`/images/${project.id}.png`} alt='Imagen de proyecto'/>
+          <img src={`/images/${project.id}.png`} alt='Imagen de proyecto'/>
         </div>
-        <h1 className='heading'>{project ? project.nombre : 'Cargando...'}</h1> 
-        <p>{project ? project.tecnologias : 'Cargando...'}</p> 
-        <p>{project ? project.descripcion : 'Cargando...'}</p> 
-        <a href={project ? project.url : '#'} target='_blank' rel='noreferrer'>Go to project</a> 
+        <div className="page project-content">
+          <h1 className='heading'>{project ? project.nombre : 'Cargando...'}</h1> 
+          <div className="project-details">
+            <p className="technologies"><strong>Tecnologías:</strong> {project ? project.tecnologias : 'Cargando...'}</p> 
+            <p className="description">{project ? project.descripcion : 'Cargando...'}</p> 
+            <a href={project ? project.url : '#'} target='_blank' rel='noreferrer'>Ver proyecto</a> 
+          </div>
+        </div>
     </div>
   )
 }

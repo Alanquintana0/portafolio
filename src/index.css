@@ -545,23 +545,57 @@ button:hover{
   animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
 }
 
+
 .page-work .mask{
   height: 400px;
+  width: 80%;
   overflow: hidden;
   box-shadow: 0px 5px 14px #ddd;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.page-work .mask img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-content{
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+.project-content h1 {
+  margin-top: 0;
+  color: #333;
+}
+
+.project-content p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #555;
 }
 
 .page-work a{
-  padding: 3px;
-  border-radius: 3px;
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 4px;
   color: white;
   background-color: crimson;
   text-decoration: none;
   transition: 300ms;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 .page-work a:hover{
   background-color: black;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .services {
@@ -632,7 +666,7 @@ button:hover{
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 200%;
   height: 100%;
   overflow: hidden;
   pointer-events: none;
@@ -643,35 +677,60 @@ button:hover{
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 200%;
+  width: 100%;
   height: auto;
-  transform-origin: 0 0;
+  transform-origin: center bottom;
+  filter: blur(0.3px);
 }
 
 .wave1 {
-  animation: wave-slide 15s linear infinite;
-  z-index: 1;
-  opacity: 01;
+  animation: wave-animation-1 36s linear infinite;
+  z-index: 3;
 }
 
 .wave2 {
-  animation: wave-slide 15s linear infinite;
+  animation: wave-animation-2 24s linear infinite;
   z-index: 2;
-  opacity: 0.2;
 }
 
 .wave3 {
-  animation: wave-slide 25s linear infinite;
-  z-index: 3;
-  opacity: 0.15;
+  animation: wave-animation-3 100s linear infinite;
+  z-index: 1;
 }
 
-@keyframes wave-slide {
+@keyframes wave-animation-1 {
   0% {
-    transform: translateX(0);
+    transform: translateX(0) scaleX(1);
+  }
+  50% {
+    transform: translateX(-25%) scaleX(1.1);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(0) scaleX(1);
+  }
+}
+
+@keyframes wave-animation-2 {
+  0% {
+    transform: translateX(-25%) scaleX(1.05);
+  }
+  50% {
+    transform: translateX(0) scaleX(0.95);
+  }
+  100% {
+    transform: translateX(-25%) scaleX(1.05);
+  }
+}
+
+@keyframes wave-animation-3 {
+  0% {
+    transform: translateX(0) scaleX(0.9);
+  }
+  50% {
+    transform: translateX(-15%) scaleX(1.1);
+  }
+  100% {
+    transform: translateX(0) scaleX(0.9);
   }
 }
 
@@ -687,6 +746,7 @@ button:hover{
   align-items: center;
   justify-content: center;
   isolation: isolate;
+  border-radius: 10px;
 }
 
 
@@ -711,12 +771,12 @@ button:hover{
   z-index: 10;
 }
 
-.gmail-button {
+.gmail-button-ln {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   background-color: white;
-  color: crimson;
+  color: rgb(73, 73, 73);
   padding: 1rem 2rem;
   border-radius: 30px;
   text-decoration: none;
@@ -724,15 +784,20 @@ button:hover{
   transition: all 0.3s ease;
   margin: 1rem;
   z-index: 10;
+  cursor: pointer;
 }
 
+.gmail-button-icon{
+  color: black;
+}
 
 .linkedin-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.gmail-button:hover {
+.gmail-button-ln:hover {
+  background-color: white;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
