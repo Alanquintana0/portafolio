@@ -19,7 +19,12 @@ export const Presentacion = () => {
         I'm a person who enjoys creating web pages and is looking forward to
         take my professional journey in this topic, and in the future, incorporate all of the 
         different fields I learned in my career and fuse them together.
-        For more information about me, my profile and skills: <Link to='/contact'>Contact me</Link>.
+        For more information about me, my profile and skills: <Link to='/#social-network'
+        onClick={(e) => {
+          e.preventDefault()
+          document.querySelector('.socialNetwork').scrollIntoView({ behavior: 'smooth' });
+        }}
+        >Contact me</Link>.
       </h2>
     </div>
   )
