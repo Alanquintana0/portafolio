@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useTypeWriter = (text, htmlContent, speed = 20) => {
+const useTypeWriter = (text, htmlContent, speed = 10) => {
     const [displayText, setDisplayText] = useState('');
     const [isComplete, setIsComplete] = useState(false);
 
@@ -26,24 +26,31 @@ const useTypeWriter = (text, htmlContent, speed = 20) => {
     }
     
     const createTypingHTML = () => {
-        const parts = text.split(/<strong>|<\/strong>/);
-        let result = '';
-        let inStrong = false;
+        // Dividir el texto en párrafos
+        const paragraphs = displayText.split('\n\n').filter(p => p.trim());
         
-        for (let i = 0; i < parts.length; i++) {
-            const partLength = result.length + parts[i].length;
-            const visiblePart = displayText.length > partLength 
-                ? parts[i] 
-                : parts[i].substring(0, Math.max(0, displayText.length - result.length));
+        // Procesar cada párrafo para mantener las etiquetas strong
+        const processedParagraphs = paragraphs.map(paragraph => {
+            const parts = paragraph.split(/<strong>|<\/strong>/);
+            let result = '';
+            let inStrong = false;
             
-            if (visiblePart) {
-                result += inStrong 
-                    ? `<strong>${visiblePart}</strong>` 
-                    : visiblePart;
+            for (let i = 0; i < parts.length; i++) {
+                if (parts[i].trim()) {
+                    result += inStrong 
+                        ? `<strong>${parts[i]}</strong>` 
+                        : parts[i];
+                }
+                inStrong = !inStrong;
             }
-            inStrong = !inStrong;
-        }
-        return result;
+            return `<p>${result}</p>`;
+        });
+
+        return paragraphs.length > 0 
+            ? paragraphs.map((_, index) => (
+                processedParagraphs[index]
+              )).join('')
+            : '';
     };
 
     return <span dangerouslySetInnerHTML={{ __html: createTypingHTML() }} />;

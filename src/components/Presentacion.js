@@ -12,39 +12,37 @@ export const Presentacion = () => {
       </h1>
       <h1 className='home-text'>
         <Typewriter
-          text={`I'm <strong>Miguel Quintana</strong>, and I build things for the web. My hobby is exploring Data Science and Machine Learning projects. This is my portfolio, where I showcase my projects, along with links to my social media and contact information.
+          text={`I'm <strong>Miguel Quintana</strong>, and I build things for the web. My hobby is exploring Data Science and Machine Learning projects. This is my portafolio, where I showcase my projects, along with links to my social media and contact information.
 
-          <br/>
+          I'm a <strong>Computer Science Engineer</strong> with a strong passion for developing user-centered applications using industry-standard frontend frameworks and creating efficient, scalable backend solutions.
 
-          I’m a <strong>Computer Science Engineer</strong> with a strong passion for developing user-centered applications using industry-standard frontend frameworks and creating efficient, scalable backend solutions.
-
-          <br/>
-
-          Feel free to reach out to me if you want us to work together!`}
+          Feel free to <strong>reach out to me</strong> if you want us to work together!`}
           htmlContent={<>
-            I'm <strong>Miguel Quintana</strong>, and I build things for the web. My hobby is exploring Data Science and Machine Learning projects. This is my portfolio, where I showcase my projects, along with links to my social media and contact information.
+            <p>
+              I'm <strong>Miguel Quintana</strong>, and I build things for the web. My hobby is exploring Data Science and Machine Learning projects. This is my portafolio, where I showcase my projects, along with links to my social media and contact information.
+            </p>
 
-            <br />
+            <p>
+              I'm a <strong>Computer Science Engineer</strong> with a strong passion for developing user-centered applications using industry-standard frontend frameworks and creating efficient, scalable backend solutions.
+            </p>
 
-            I’m a <strong>Computer Science Engineer</strong> with a strong passion for developing user-centered applications using industry-standard frontend frameworks and creating efficient, scalable backend solutions.
-
-            <br />
-
-            Feel free to reach out to me if you want us to work together!
+            <p>
+              Feel free to{' '}
+              <strong>
+              <Link 
+                to='/#social-network'
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('.socialNetwork').scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                reach out to me
+              </Link>
+              {' '}</strong>if you want us to work together!
+            </p>
           </>}
         />
       </h1>
-
-      <div className="button-media">
-        <h1>
-          <Link className='button-socialmedia' to='/#social-network'
-            onClick={(e) => {
-              e.preventDefault()
-              document.querySelector('.socialNetwork').scrollIntoView({ behavior: 'smooth' });
-            }}
-          >Contact me</Link>
-        </h1>
-      </div>
 
       {/* 
       <h1 className='home-text'>

@@ -10,8 +10,10 @@ export const Inicio = () => {
   return (
     <div className='home'>
       
+      <section className="cover-landpage">
+        <Presentacion/>
+      </section>
       
-      <Presentacion/>
       {/*En esta seccion llamo al modulo ProjectList con un limite para que solo me muestre 2 proyectos y sus accesos.*/}
       <section className='latest-works'>
         <h2 className='heading'>Some of my latest projects</h2>
