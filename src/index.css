@@ -221,12 +221,133 @@ code {
   background-color: lightgray;
 }
 
+.cover-letter{
+  position: relative;
+  overflow: hidden;
+  min-height: 50vh;
+}
+
+.cover-letter .home-greetings{
+  font-size: 3.0rem;
+  padding-left: 100px;
+  padding-right: 100px;
+  font-weight: bold;
+  border-bottom: 0px;
+}
+
+.button-media{
+  height: 55px;
+  width: 100%;
+  padding-left: 100px;
+}
+
+.button-socialmedia{
+  height: 100%;
+  border-radius: 5px;
+  color: white;
+  background-color: crimson;
+  text-decoration: none;
+  transition: 300ms;
+}
+
+.button-socialmedia:hover{
+  background-color: black;
+}
+
+.cover-letter .home-text{
+  padding-left: 100px;
+  padding-right: 100px;
+  font-size: 2.5rem;
+  font-weight: lighter;
+}
+
+.cover-letter {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.animated-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.diagonal-box {
+  position: absolute;
+  width: 200px;
+  height: 2000px;
+  background: linear-gradient(
+    45deg,
+    rgba(220, 20, 60, 1),  /* crimson con transparencia */
+    rgba(255, 255, 255, 1)  /* blanco con transparencia */
+  );
+  transform: rotate(45deg);
+  animation: diagonalMove 4s forwards;
+  opacity: 0.7;
+}
+
+.diagonal-box:nth-child(1) {
+  top: -400px;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.diagonal-box:nth-child(2) {
+  top: -400px;
+  left: 50%;
+  animation-delay: 0.5s;
+}
+
+.diagonal-box:nth-child(3) {
+  top: -400px;
+  left: 80%;
+  animation-delay: 1s;
+}
+
+@keyframes diagonalMove {
+  0% {
+    transform: rotate(45deg) translateY(0);
+  }
+  80% {
+    transform: rotate(45deg) translateY(600px);
+  }
+  100% {
+    transform: rotate(45deg) translateY(600px);
+  }
+}
+
+/* Ensure text is readable */
+.home-greetings,
+.home-text {
+  color: black;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+
+.home-greetings,
+.home-text {
+  color: black;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
 .home .home-text h1{
   font-family: 'Raleway', monospace;
   font-weight: 400;
-  font-size: 40px;
+  font-size: 80px;
   margin-bottom: 0px;
 }
+
+
 
 .home .home-text{
   text-align: justify;
@@ -242,8 +363,8 @@ code {
 }
 
 .home .home-text a{
-  padding: 3px;
-  border-radius: 3px;
+  padding: 1px;
+  border-radius: 5px;
   color: white;
   background-color: crimson;
   text-decoration: none;
@@ -612,6 +733,8 @@ button:hover{
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
+  min-width: 250px;
+  max-width: 348.81px;
 }
 
 .service:hover {
